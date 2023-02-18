@@ -23,23 +23,28 @@
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>State</th>
-        <th>Action</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Image</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="todo_task : ${todo_tasks}" th:class="${todo_task.state}">
-        <td th:text="${todo_task.id}"></td>
-        <td th:text="${todo_task.name}"></td>
-        <td th:text="${todo_task.state}"></td>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.age}"></td>
+        <td th:text="${employee.address}"></td>
+        <td>
+            <img th:src="${employee.image}">
+        </td>
         <td class="action">
-            <button class="edit-btn" th:onclick="|location.href='@{/edit(id=${todo_task.id})}'|">Edit</button>
-            <button class="fa fa-trash trash-btn" th:onclick="|location.href='@{/delete(id=${todo_task.id})}'|"></button>
+            <button class="edit-btn" th:onclick="|location.href='@{/edit(id=${employee.id})}'|">Edit</button>
+            <button class="fa fa-trash trash-btn" th:onclick="|location.href='@{/delete(id=${employee.id})}'|"></button>
         </td>
     </tr>
     </tbody>
 </table>
-<button class="todo-button" onclick="location.href='/add'">
+<button class="add-btn" onclick="location.href='/add'">
     <i class="fas fa-plus-circle fa-lg"></i>
 </button>
 </body>

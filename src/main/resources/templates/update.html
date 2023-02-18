@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Font Awesome cdn css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" th:href="@{/styles/style.css}"/>
+  <title>Employee Management</title>
+</head>
+<body>
+<header>
+  <h1>Employee Management</h1>
+  <h4>Add new Employee</h4>
+</header>
+<form action="#" th:action="@{/update(id=${employee.id})}" th:object="${employee}" method="POST">
+  <input type="text" class="todo-input" th:field="*{name}" th:value="${employee.name}">
+  <input type="text" class="todo-input" th:field="*{age}" th:value="${employee.age}">
+  <input type="text" class="todo-input" th:field="*{address}" th:value="${employee.address}">
+  <input type="text" class="todo-input" th:field="*{image}" th:value="${employee.image}">
+  <button class="add-btn" type="submit">
+    <i class="fas fa-plus-circle fa-lg"></i>
+  </button>
+</form>
+
+</body>
+</html>

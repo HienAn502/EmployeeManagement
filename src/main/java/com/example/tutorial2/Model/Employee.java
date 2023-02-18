@@ -1,6 +1,6 @@
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+package com.example.tutorial2.Model;
+
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -9,13 +9,13 @@ import lombok.Data;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(columnDefinition = "varchar(50) not null")
+    private String name;
+    private int age;
+    private String address;
+    private String image;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
 }
